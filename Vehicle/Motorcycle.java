@@ -15,6 +15,7 @@ public class Motorcycle extends PersonalVehicle {
         this.hasSidecar = hasSidecar;
     }
 
+    // Gets 10% off
     public double calculateRentalPrice(int days) {
         return dailyRate * days * 0.90;
     }

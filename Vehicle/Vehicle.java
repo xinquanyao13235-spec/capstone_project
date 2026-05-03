@@ -22,7 +22,7 @@ public abstract class Vehicle implements Rentable {
         return dailyRate * days;
     }
 
-    public void start() {
+    public abstract void start() {
         System.out.println(make + " " + model + " is starting!");
     }
 

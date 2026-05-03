@@ -20,7 +20,7 @@ public class GasolineCar extends Car {
         this.tankCapacityGal = tankCapacityGal;
     }
 
-    // Inherits calculateRentalPrice from Vehicle — no override needed
+    // Inherits calculateRentalPrice from Vehicle, no override needed
 
 
     public String getComfortFeatures() {

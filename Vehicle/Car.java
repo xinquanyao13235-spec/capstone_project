@@ -18,6 +18,13 @@ public abstract class Car extends PersonalVehicle {
         this.engineType = engineType;
         this.engineSizeL = engineSizeL;
     }
+    public abstract void start();
+    public abstract void displayInfo();
+    public abstract void horn();
+    public abstract String getComfortFeatures();
+
+    public abstract String getEngineDetails();
+
 
     public String toString() {
         return super.toString() +
