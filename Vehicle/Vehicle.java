@@ -22,7 +22,7 @@ public abstract class Vehicle implements Rentable {
         return dailyRate * days;
     }
 
-    public abstract void start() {
+    public void start() {
         System.out.println(make + " " + model + " is starting!");
     }
 
@@ -47,4 +47,7 @@ public abstract class Vehicle implements Rentable {
     public double getDailyRate()  { return dailyRate; }
     public boolean isAvailable()  { return available; }
     public void setAvailable(boolean available) { this.available = available; }
+
+    public int compareTo(Vehicle other) {
+        return this.vehicleID.compareTo(other.vehicleID);
 }
