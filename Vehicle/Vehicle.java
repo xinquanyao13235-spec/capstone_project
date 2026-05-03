@@ -50,4 +50,5 @@ public abstract class Vehicle implements Rentable, Comparable<Vehicle>  {
 
     public int compareTo(Vehicle other) {
         return this.vehicleID.compareTo(other.vehicleID);
+    }
 }
