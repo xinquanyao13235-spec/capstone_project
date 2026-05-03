@@ -15,16 +15,15 @@ public class RentalManager {
         }
     }
 
-    /**
-     * 1. Sorting method using compareTo()
-     */
+     // Sorting method using compareTo()
+     
     public void sortVehicles() {
         Arrays.sort(vehicles, 0, count);
     }
 
-    /**
-     * 2. Recursive search method to find a vehicle by vehicleID
-     */
+    
+    // 2. Recursive search method to find a vehicle by vehicleID
+    
     public Vehicle findVehicleByID(String id) {
         return recursiveSearch(0, id);
     }
@@ -42,13 +41,12 @@ public class RentalManager {
         return recursiveSearch(index + 1, id);
     }
 
-    /**
-     * 3. Method to print all vehicles in the system
-     */
+    
+    // 3. Method to print all vehicles in the system
+    
     public void printAllVehicles() {
         System.out.println("=== Current Rental Fleet ===");
         for (int i = 0; i < count; i++) {
-            // Polymorphism: calls the specific toString() of the subclass
             System.out.println(vehicles[i].toString());
         }
     }
