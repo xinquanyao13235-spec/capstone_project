@@ -9,10 +9,11 @@ public class RentalManager {
         this.count = 0;
     }
 
-    public void addVehicle(Vehicle v) {
-        if (count < vehicles.length) {
-            vehicles[count++] = v;
+    public void addVehicle(Vehicle v) throws RentalErrorException {
+        if (count >= vehicles.length) {
+            throw new RentalErrorException("Cannot add vehicle: Rental fleet is at maximum capacity.");
         }
+        vehicles[count++] = v;
     }
 
      // Sorting method using compareTo()
@@ -21,23 +22,21 @@ public class RentalManager {
         Arrays.sort(vehicles, 0, count);
     }
 
+    // Recursive search method to find a vehicle by vehicleID
     
-    // 2. Recursive search method to find a vehicle by vehicleID
-    
-    public Vehicle findVehicleByID(String id) {
-        return recursiveSearch(0, id);
+    public Vehicle findVehicleByID(String id) throws RentalErrorException {
+        Vehicle found = recursiveSearch(0, id);
+        if (found == null) {
+            throw new RentalErrorException("Search Failed: Vehicle with ID " + id + " does not exist.");
+        }
+        return found;
     }
 
     private Vehicle recursiveSearch(int index, String id) {
-        // Base case: ID not found or end of array reached
-        if (index >= count) {
-            return null;
+        if (index >= count) return null;
+        if (vehicles[index].getVehicleID().equalsIgnoreCase(id)) {
+            return vehicles[index]; // Found in Vehicle base class
         }
-        // Base case: Match found
-        if (vehicles[index].getVehicleID().equals(id)) {
-            return vehicles[index];
-        }
-        // Recursive step
         return recursiveSearch(index + 1, id);
     }
 
