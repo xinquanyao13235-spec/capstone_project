@@ -17,12 +17,8 @@ public class RentalManager {
 
     /**
      * 1. Sorting method using compareTo()
-     * Note: Since Vehicle is abstract, we should implement Comparable<Vehicle> 
-     * in the Vehicle class to use this effectively.
      */
     public void sortVehicles() {
-        // This assumes Vehicle implements Comparable<Vehicle>
-        // based on vehicleID or dailyRate.
         Arrays.sort(vehicles, 0, count);
     }
 
