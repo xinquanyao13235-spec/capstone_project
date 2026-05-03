@@ -1,4 +1,4 @@
-public abstract class Vehicle implements Rentable {
+public abstract class Vehicle implements Rentable, Comparable<Vehicle>  {
 
     protected String vehicleID;
     protected String make;
